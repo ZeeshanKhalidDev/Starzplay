@@ -1,0 +1,76 @@
+@import "../../App.scss";
+
+.site_logo {
+  img {
+    width: 220px;
+    height: 45px;
+    @include media-breakpoint-down(xl) {
+      width: 150px;
+    }
+  }
+}
+.navbar_wrapper {
+  padding: 1.875rem 3vw;
+  background: linear-gradient(
+    126deg,
+    rgba(0, 0, 0, 1) 78%,
+    rgba(110, 110, 110, 1) 100%
+  );
+  * {
+    color: #a6a6a6;
+    font-size: 1.375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+  .nav_link {
+    margin-left: 1.875rem;
+    position: relative;
+    &:hover,
+    &:focus {
+      &:before {
+        content: " ";
+        width: 40%;
+        bottom: -5px;
+        left: 30%;
+        height: 2px;
+        background-color: #ff9059;
+        position: absolute;
+      }
+    }
+  }
+  .nav_dropdown {
+    margin-left: 1.875rem;
+    font-size: 1.375rem;
+    a {
+      background-color: transparent;
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    padding: 1.375rem 3vw;
+    * {
+      font-size: 1.1rem;
+    }
+    .nav_link {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .nav_link,
+    .auth_btn_wrap,
+    .nav_dropdown {
+      margin-left: 1.375rem;
+    }
+    [aria-label="Toggle navigation"] {
+      border: 1px solid #a6a6a6;
+      &:hover,
+      &:focus,
+      &:active {
+        border: 1px solid #ffffff;
+        box-shadow: none;
+        outline: none;
+        span {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
